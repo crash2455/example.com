@@ -1,0 +1,22 @@
+@import url("main.css");
+
+.centered{text-align: center}
+/*body {font-family: Arial, sans-serif; width: 800px; margin: auto}*/
+ul.two{ columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        }
+.small {
+    width: 550px;
+    margin: auto
+}      
+.left
+{text-align: left;}  
+ul.nobullet{
+    list-style-type: none;
+}
+td.subject{font-style: italic}
+h2{
+    font-size: 18px;
+}
+h3{ font-size: 16px}

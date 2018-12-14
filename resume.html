@@ -1,29 +1,22 @@
 <html lang="en">
     <head>
-        <style>
-        .centered{text-align: center}
-        body {font-family: Arial, sans-serif; width: 800px; margin: auto}
-        ul.two{ columns: 2;
-                -webkit-columns: 2;
-                -moz-columns: 2;
-                }
-        .small {
-            width: 550px;
-            margin: auto
-        }      
-        .left
-        {text-align: left;}  
-        ul.nobullet{
-            list-style-type: none;
-        }
-        td.subject{font-style: italic}
-        h2{
-            font-size: 18px;
-        }
-        h3{ font-size: 16px}
-        </style>
+        <link rel="stylesheet" tyoe="text/css" href="./dist/css/resume.css">
     </head>
+    <header>
+            <span class="logo">The Cow Jumped Over the Moon</span>
+            <a id="toggleMenu">Menu</a>
+            <nav>
+                    
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+            </nav>
+    </header>
+    
     <body> 
+    <main>
         <h1 class="centered">Matthew Campen</h1>
         <div class="centered">
             <a href="https://www.linkedin.com/in/matt-campen/" target="_blank" rel="noopener">LinkedIn</a>
@@ -87,7 +80,10 @@
                 <h2>PROFESSIONAL EXPERIENCE</h2>
         </div>
         <div>
-            <h3>BRAVOSOLUTION US INC, Chicago, IL									2015 - 2018</h3>
+            <h3 class="clearfix">
+                <span class="float-left">BRAVOSOLUTION US INC, Chicago, IL</span>
+                <span class="float-right">2015 - 2018</span>
+            </h3>
             Developing client-driven solutions for collaborative sourcing and procurement.
             <p><strong>Junior Database Developer</strong></p>
             <ul>
@@ -98,7 +94,10 @@
             </ul>
         </div>
         <div>
-                <h3>HEWLETT PACKARD COMPANY INC, Chicago, IL                    2011-2014</h3>
+                <h3  class="clearfix">
+                    <span class="float-left">HEWLETT PACKARD COMPANY INC, Chicago, IL</span>
+                    <span class="float-right">2011 - 2014</span>
+                </h3>
                 Trouble shooting, customer service and support for HPSW Marketing Optimization WCM.
                 <p><strong>Technical Solutions Consultant II</strong></p>
                 <ul>
@@ -112,5 +111,6 @@
         </div>
         <p><h3>Bachelors of Science, Computer Engineering (2010)</h3>
         Illinois Institute of Technology, Chicago IL</p>
+    </main>
     </body>
 </html>
