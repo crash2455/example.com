@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+*{
+    font-family: "Open Sans", sans-serif;
+
+}
+
+.clearfix:after{
+    content:"";
+    display:table;
+    clear: both;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background:#ddd
+}
+
+header{
+    height: 50px;
+    background: #333;
+    color:#ddd;
+    padding: 0 .5rem 0 1em;
+}
+
+header .logo{
+    line-height: 50px; /* height of line */
+    font-weight: bold;
+}
+
+nav {float: right;}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a:link,
+nav ul li a:visited,
+nav ul li a{
+    display:inline-block; /*inline block allows inline display but also allows block level formatting*/
+    padding: 0 .5rem;
+    color: #ddd;
+    line-height: 50px;
+    text-decoration: none
+}
+
+nav ul li a:hover{
+    background:#444
+}
+
+main{
+    margin:0 auto;
+    width: 960px;
+    max-width: 100% /*prevents overflow for resolutions below 960px wide*/
+}
+
+#toggleMenu{
+    display:none;
+}
+
+
+
+.avatar {
+    border-radius:50%; 
+    float:left; 
+    margin-right:1em
+}
+
+.contact-form{
+    max-width: 300px;
+    margin: 0 auto;
+    background: #ccc;
+    border-radius: 6px;
+    padding: 2rem 1.5rem;
+}
+
+.contact-form label{
+    display: block;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea{
+    font-size: 2rem;
+    padding: .5rem .25rem;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.contact-form input[type="submit"]{
+    font-size: 2rem;
+    padding: .5rem 1rem;
+}
+
+@media only screen and (max-width:420px){
+    .contact-form input[type="submit"]{
+        display: block;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:960px) {
+    main{
+        max-width:90%;
+    }
+
+    nav{
+        position:absolute;
+        display:none;
+        background: #333;
+        top:50px;
+        left:0;
+        right:0;
+    }
+
+    #toggleMenu{
+        display:block;
+        float: right;
+        line-height: 50px;
+    }
+
+    nav ul li a,
+    nav ul li a:link,
+    nav ul li a:visited{
+      display: block;
+      border-bottom: 1px solid #777;
+    }
+}
