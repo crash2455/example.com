@@ -1,12 +1,23 @@
 <?php
 
 require '../core/matt/src/validation/validate.php';
+require '../vendor/autoload.php';
+require '../config/keys.php';
 
 use matt\validation;
+use Mailgun\Mailgun;
+
 
 $message = null;
 $valid = new Validate();
 $input = filter_input_array(INPUT_POST);
+
+$args = [
+  'name' => FILTER_SANITIZE_STRING,
+  'subject' => FILTER_SANITIZE_STRING,
+  'message' => FILTER_SANITIZE_STRING,
+  'email' => FILTER_SANITIZE_EMAIL
+];
 
 if(!empty($input)){
   $valid->validation = [
@@ -30,7 +41,23 @@ if(!empty($input)){
   $valid->check($input);
 
   if(empty($valid->errors)){
-    $message = "<div class=\"alert alert-success\">Your form has been submitted!</div>";
+
+    # Instantiate the client.
+    $mgClient = new Mailgun(MG_KEY);
+    $domain = MG_DOMAIN;
+
+    # Make the call to the client.
+    $result = $mgClient->sendMessage("$domain",
+              array('from'    => "{$input['name']} <{$input['email']}>",
+                    'to'      => 'Matthew Campen <mattcampen@gmail.com>',
+                    'subject' => $input['subject'],
+                    'text'    => $input['message']
+                  )
+                );
+    # You can see a record of this email in your logs: https://app.mailgun.com/app/logs
+    var_dump($result);
+
+    //$message = "<div class=\"alert alert-success\">Your form has been submitted!</div>";
   }else{
     $message = "<div class=\"alert alert-danger\">Your form has errors!</div>";
   }
