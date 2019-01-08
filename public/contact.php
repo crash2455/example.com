@@ -45,7 +45,7 @@ if(!empty($input)){
     # Instantiate the client.
     $mgClient = new Mailgun(MG_KEY);
     $domain = MG_DOMAIN;
-
+/*
     # Make the call to the client.
     $result = $mgClient->sendMessage("$domain",
               array('from'    => "{$input['name']} <{$input['email']}>",
@@ -56,7 +56,11 @@ if(!empty($input)){
                 );
     # You can see a record of this email in your logs: https://app.mailgun.com/app/logs
     var_dump($result);
-
+*/
+                $response = 200;
+                if($response === 200){
+                  header ('LOCATION:thanks.php');
+                }
     //$message = "<div class=\"alert alert-success\">Your form has been submitted!</div>";
   }else{
     $message = "<div class=\"alert alert-danger\">Your form has errors!</div>";
