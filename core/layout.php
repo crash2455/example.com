@@ -13,6 +13,7 @@ function active($name){
 <!doctype html>
 <html lang="en">
   <head>
+    <base href="/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -53,6 +54,9 @@ function active($name){
                 </li>
                 <li class="nav-item <?php echo active('contact.php'); ?>">
                   <a class="nav-link" href="contact.php">Contact</a>
+                </li>
+                <li class="nav-item <?php echo active('/posts/'); ?>">
+                  <a class="nav-link" href="/posts">Blog</a>
                 </li>
             </ul>
         </div>
