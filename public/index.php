@@ -1,65 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-  <meta charset="UTF-8">
-  <title>The Cow Jumped Over the Moon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-</head>
+$meta=[];
+$meta['title']="The Cow Jumped Over the Moon";
+$meta['description']='I am a garbage monster';
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Matt Campen</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.php">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="resume.php">Resume</a>
-        </li>
-      </ul>
+$content = <<<EOT
+<div class="jumbotron">
+  <h1>Yes it is me the Space Cow</h1>
+</div>
+<div class="card-group">
+  <div class="card text-white bg-dark mb-3">
+    <img src="heyguys.png" class="card-img-top" alt="Hey Guys">
+    <div class="card-body">
+      <h5 class="card-title">Hey Guys</h5>
+      <p class="card-text">Check me out on <a  class="text-secondary" href="http://orbitalbeef.com">twitch</a> and stuff.</p>
     </div>
-  </nav>
-  <main>
-    <div class="jumbotron">
-      <h1>Yes it is me the Space Cow</h1>
+  </div>
+  <div class="card text-white bg-dark mb-3">
+    <img src="lore.png" class="card-img-top" alt="Work">
+    <div class="card-body">
+      <h5 class="card-title">Buy my book</h5>
+      <p class="card-text">I made an RPG about goblins <a  class="text-secondary" href="http://goblin.house">and you can buy it here.</a></p>
     </div>
-    <div class="card-group">
-      <div class="card text-white bg-dark mb-3">
-        <img src="heyguys.png" class="card-img-top" alt="Hey Guys">
-        <div class="card-body">
-          <h5 class="card-title">Hey Guys</h5>
-          <p class="card-text">Check me out on <a  class="text-secondary" href="http://orbitalbeef.com">twitch</a> and stuff.</p>
-        </div>
-      </div>
-      <div class="card text-white bg-dark mb-3">
-        <img src="lore.png" class="card-img-top" alt="Work">
-        <div class="card-body">
-          <h5 class="card-title">Buy my book</h5>
-          <p class="card-text">I made an RPG about goblins <a  class="text-secondary" href="http://goblin.house">and you can buy it here.</a></p>
-        </div>
-      </div>
-      <div class="card text-white bg-dark mb-3">
-        <img src="thonk.png" class="card-img-top" alt="Oh No">
-        <div class="card-body">
-          <h5 class="card-title">I play a lot of videogames</h5>
-          <p class="card-text">I play some of them fast.  <a class="text-secondary" href="https://www.speedrun.com/user/SpaceCow">Here's a big list of them.</a></p>
-        </div>
-      </div>
+  </div>
+  <div class="card text-white bg-dark mb-3">
+    <img src="thonk.png" class="card-img-top" alt="Oh No">
+    <div class="card-body">
+      <h5 class="card-title">I play a lot of videogames</h5>
+      <p class="card-text">I play some of them fast.  <a class="text-secondary" href="https://www.speedrun.com/user/SpaceCow">Here's a big list of them.</a></p>
     </div>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-</body>
+  </div>
+</div>
+EOT;
+require '../core/layout.php'
 
-</html>
+?>
