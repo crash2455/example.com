@@ -27,3 +27,5 @@ function slug($string){
     strtolower($string)
 );
 }
+
+session_start();

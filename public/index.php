@@ -1,5 +1,5 @@
 <?php
-
+require '../core/functions.php';
 $meta=[];
 $meta['title']="The Cow Jumped Over the Moon";
 $meta['description']='I am a garbage monster';

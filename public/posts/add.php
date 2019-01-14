@@ -1,37 +1,40 @@
 <?php
-//require '../../config/keys.php';
-require '../../core/db_connect.php';
+require '../../core/session.php';
 require '../../core/functions.php';
-$message = null;
+require '../../config/keys.php';
+require '../../core/db_connect.php';
+
+$message=null;
 
 $args = [
-    'title'=>FILTER_SANITIZE_STRING,            //strips html
-    'meta_description'=>FILTER_SANITIZE_STRING, //strips html
-    'meta_keywords'=>FILTER_SANITIZE_STRING,    //strips html
-    'body'=>FILTER_UNSAFE_RAW                   //strips nulls
+    'title'=>FILTER_SANITIZE_STRING, //strips HMTL
+    'meta_description'=>FILTER_SANITIZE_STRING, //strips HMTL
+    'meta_keywords'=>FILTER_SANITIZE_STRING, //strips HMTL
+    'body'=>FILTER_UNSAFE_RAW  //NULL FILTER
 ];
 
 $input = filter_input_array(INPUT_POST, $args);
 
 if(!empty($input)){
 
-    //strip extra white space
+    //Strip white space, begining and end
     $input = array_map('trim', $input);
 
-    //only allow whitelisted tags
+    //Allow only whitelisted HTML
     $input['body'] = cleanHTML($input['body']);
 
-    //remove any instances of characters that are not a-z or 0-9, replace with dashes, force all characters to be lowercase before testing
+    //Create the slug
     $slug = slug($input['title']);
 
-    //prepared statement
-    $sql = 'INSERT INTO posts SET id=uuid(), title=?, slug=?, body=?';
+    //Sanitiezed insert
+    $sql = 'INSERT INTO posts SET id=uuid(), title=?, slug=?, body=?, meta_keywords=?, meta_description=?';
 
-    //this if statement is sort of a softer try/catch (preferred for frontend)
     if($pdo->prepare($sql)->execute([
         $input['title'],
         $slug,
-        $input['body']
+        $input['body'],
+        $input['meta_description'],
+        $input['meta_keywords']
     ])){
        header('LOCATION:/posts');
     }else{

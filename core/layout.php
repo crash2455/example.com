@@ -1,4 +1,5 @@
 <?php
+
 //returns Active status for link spans without having to have a new layout on every page
 function active($name){
   $current = basename($_SERVER['PHP_SELF']);
@@ -58,6 +59,16 @@ function active($name){
                 <li class="nav-item <?php echo active('/posts/'); ?>">
                   <a class="nav-link" href="/posts">Blog</a>
                 </li>
+                <li class="nav-item <?php echo active('/users/'); ?>">
+                  <a class="nav-link" href="/users">Users</a>
+                </li>
+                <li class="nav-item">
+                <?php if(!empty($_SESSION['user']['id'])): ?>
+                  <a class="nav-link" href="logout.php">Logout</a>
+                <?php else: ?>
+                  <a class="nav-link <?php echo active('/login.php'); ?>" href="login.php">Login</a>
+                <?php endif; ?>
+              </li>
             </ul>
         </div>
     </nav>

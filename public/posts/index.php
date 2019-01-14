@@ -1,4 +1,6 @@
 <?php
+require '../../core/functions.php';
+require '../../config/keys.php';
 require '../../core/db_connect.php';
 
 $meta=[];
